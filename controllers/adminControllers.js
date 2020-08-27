@@ -152,6 +152,13 @@ class AdminControllers {
             }
         })
         .then(result => {
+            return UserBook.destroy({
+                where : {
+                    user_id : id
+                }
+            })
+        })
+        .then(result => {
             res.redirect('/admin/list-users')
         })
         .catch(err => {
