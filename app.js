@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const nodemailer = require('nodemailer');
 
 const session = require('express-session');
 const router = require('./routers/index')
+app.locals.moment = require('moment');
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }))
