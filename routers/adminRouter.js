@@ -17,7 +17,7 @@ function checkLogin(req, res, next ) {
 router.use(checkLogin)
 
 router.get('/')
-router.get('/list-books', AdminControllers.show)
+router.get('/list-books',  AdminControllers.show)
 router.get('/book/add', AdminControllers.addForm)
 router.post('/book/add', AdminControllers.addPost)
 router.get('/delete-book/:id', AdminControllers.delete)
