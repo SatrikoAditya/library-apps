@@ -1,4 +1,4 @@
-const { Book } = require('../models')
+const { Book, User } = require('../models')
 
 class AdminControllers {
     static show(req, res) {
@@ -20,9 +20,9 @@ class AdminControllers {
     }
 
     static addPost(req, res) {
-        const { title, author, genre, stock } = req.body
+        const { title, author, genre, stock, desc, img } = req.body
         Book.create({
-            title, author, genre, stock
+            title, author, genre, stock, desc, img
         })
         .then(result => {
             res.redirect('/admin/list-books')
@@ -59,10 +59,10 @@ class AdminControllers {
     }
 
     static editPost(req, res) {
-        const { title, author, genre, stock } = req.body
+        const { title, author, genre, stock, desc, img } = req.body
         const id = req.params.id
         Book.update({
-            title, author, genre, stock
+            title, author, genre, stock, desc, img
         }, {
             where : {
                 id
@@ -70,6 +70,52 @@ class AdminControllers {
         })
         .then(result => {
             res.redirect('/admin/list-books')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static registerForm(req, res) {
+        res.render('admin/register')
+    }
+
+    static registerPost(req, res) {
+        const { first_name, last_name, email, password, phone_number, address } = req.body
+        User.create({
+            first_name, last_name, email, password, phone_number, address
+        })
+        .then(result => {
+            res.redirect('/admin/list-books')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static listUser(req, res) {
+        User.findAll({
+            order : [
+                ['first_name', 'ASC']
+            ]
+        })
+        .then(data => {
+            res.render('admin/list-user', { data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static deleteUser(req, res) {
+        const id = req.params.id
+        User.destroy({
+            where : {
+                id
+            }
+        })
+        .then(result => {
+            res.redirect('/admin/list-users')
         })
         .catch(err => {
             res.send(err)
