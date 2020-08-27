@@ -27,6 +27,8 @@ router.get('/register/user', AdminControllers.registerForm)
 router.post('/register/user', AdminControllers.registerPost)
 router.get('/list-users', AdminControllers.listUser)
 router.get('/delete/user/:id', AdminControllers.deleteUser)
+router.get('/books/rented', AdminControllers.listRentBook)
+router.get('/books/pending')
 router.get('/logout', AdminControllers.logout)
 
 module.exports = router

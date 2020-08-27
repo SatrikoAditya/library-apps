@@ -1,4 +1,4 @@
-const { Book, User, Admin } = require('../models')
+const { Book, User, Admin, UserBook } = require('../models')
 
 const bcrypt = require('bcryptjs');
 
@@ -27,6 +27,9 @@ class AdminControllers {
             } else {
                 res.send('user not found')
             }
+        })
+        .catch(err => {
+            res.send(err)
         })
     }
 
@@ -150,6 +153,36 @@ class AdminControllers {
         })
         .then(result => {
             res.redirect('/admin/list-users')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static listRentBook(req, res) {
+        UserBook.findAll({
+            where : {
+                status: 'outgoing'
+            },
+            include : [User, Book]
+        })
+        .then(data => {
+            res.render('admin/listRentBook', { data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static pending(req, res) {
+        UserBook.findAll({
+            where : {
+                status: 'returned'
+            },
+            include: [User, Book]
+        })
+        .then(data => {
+            
         })
         .catch(err => {
             res.send(err)
