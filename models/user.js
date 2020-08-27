@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
+    getFullName() {
+      return `${this.first_name} ${this.last_name}`
+    }
     static associate(models) {
       // define association here
     }
@@ -72,25 +75,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   }, {
-    hooks: {
-      beforeCreate : (instance, options) => {
-        bcrypt.genSalt(10, (err, salt) => {
-          if (err) {
-            console.log(err);
-          } else {
-            bcrypt.hash(instance.password, salt, (err, hash) => {
-              if (err) {
-                console.log(err);
-              } else {
-                instance.password = hash;
-              }
-            })
-          }
-        })
-      }
-    },
     sequelize,
     modelName: 'User',
   });
+  User.addHook('beforeCreate', (instance, opt) => {
+    const salt = bcrypt.genSaltSync(10);
+    instance.password = bcrypt.hashSync(instance.password, salt);
+  })
   return User;
 };

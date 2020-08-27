@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>List User</title>
+  </head>
+  <body>
+      <div class="container"><br>
+        <%- include('../partials/navbar') %>
+        <h1>List User</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= data[i].getFullName() %></td>
+                        <td><%= data[i].email %></td>
+                        <td><%= data[i].phone_number %></td>
+                        <td>
+                            <a class="btn btn-danger" <a onclick="return window.confirm('Are you sure want to delete this user?')" href="/admin/delete/user/<%= data[i].id %>" role="button">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>

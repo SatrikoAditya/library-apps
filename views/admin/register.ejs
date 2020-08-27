@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Register User</title>
+  </head>
+  <body>
+    <div class="container"><br>
+    <h1>Register User</h1><br>
+    <form action="user" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">First Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="first_name" placeholder="Input First Name Here...">
+        </div>
+    
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Last Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="last_name" placeholder="Input Last Name Here...">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="Input Email here...">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" name="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Phone Number</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="phone_number" placeholder="Input Phone number here...">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Address</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="address" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-danger" href="/admin/list-books" role="button">Cancel</a>
+    </form>
+    </div>
+  </body>
+</html>
