@@ -29,6 +29,8 @@ router.get('/list-users', AdminControllers.listUser)
 router.get('/delete/user/:id', AdminControllers.deleteUser)
 router.get('/books/rented', AdminControllers.listRentBook)
 router.get('/books/pending')
+router.get('/sendemail', AdminControllers.emailForm)
+router.post('/sendemail', AdminControllers.emailPost)
 router.get('/logout', AdminControllers.logout)
 
 module.exports = router

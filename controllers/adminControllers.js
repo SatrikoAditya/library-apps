@@ -1,6 +1,7 @@
 const { Book, User, Admin, UserBook } = require('../models')
 
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
 
 class AdminControllers {
     static loginForm(req, res) {
@@ -194,6 +195,33 @@ class AdminControllers {
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static emailForm(req, res) {
+        res.render('emailform')
+    }
+
+    static emailPost(req, res) {
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'library.jhon2@gmail.com',
+                pass: 'hacktiv8123'
+            }
+        });
+        
+        var mailOptions = {
+            from: 'library.jhon1@gmail.com',
+            to: req.body.to,
+            subject: req.body.subject,
+            text: req.body.text
+        };
+        
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) throw err;
+            console.log('Email sent: ' + info.response);
+            res.redirect('/admin/books/rented')
+        });
     }
 
     static logout(req, res) {

@@ -12,7 +12,7 @@
       <div class="container"><br>
         <%- include('../partials/navbar') %>
         <h1>List Book</h1>
-        <p style="text-align: right;"><a class="btn btn-success" href="book/add" role="button">Add New Book</a></p>
+        <p style="text-align: right;"><a class="btn btn-primary" href="/admin/sendemail" role="button">Send Email</a></p>
         <table class="table">
             <thead>
             <tr>
@@ -28,7 +28,7 @@
                         <td><%= data[i].User.getFullName() %></td>
                         <td><%= data[i].User.email %></td>
                         <td><%= data[i].Book.title %></td>
-                        <td><%= data[i].due_date %></td>
+                        <td><%= moment(data[i].due_date).format("DD MMMM YYYY")  %></td>
                     </tr>
                 <% } %>
             </tbody>
