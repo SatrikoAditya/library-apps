@@ -9,6 +9,6 @@ router.post('/login', Controller.loginPost);
 router.get('/checkout/:bookId', Controller.checkoutForm);
 router.post('/checkout/:bookId', Controller.checkoutPost);
 router.get('/rented', Controller.findAllRent);
-router.post('/return/:userbookId', Controller.return);
+router.get('/return/:userbookId', Controller.return);
 
 module.exports = router

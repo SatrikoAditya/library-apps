@@ -4,7 +4,7 @@
         "author": "J.K. Rowling",
         "genre": "Fantasy",
         "stock": 15,
-        "img": "images/books/book1.jpeg",
+        "img": "/images/books/book1.jpeg",
         "desc" : "Ut euismod quam dolor, ac bibendum dui hendrerit eget. Aliquam id maximus metus. Maecenas vestibulum nunc id facilisis lobortis. Aenean luctus ex non neque finibus accumsan. Vivamus ante ipsum, blandit non pretium et, dignissim a urna. Vestibulum a aliquet nisi."
     },
     {
@@ -12,7 +12,7 @@
         "author": "Stephenie Meyer",
         "genre": "Fantasy",
         "stock": 7,
-        "img": "images/books/book2.jpeg",
+        "img": "/images/books/book2.jpeg",
         "desc" : "Vestibulum dignissim ex eu odio mollis volutpat. Vestibulum enim massa, aliquet ut lobortis sodales, venenatis sit amet nibh. Ut viverra neque sapien, quis cursus lacus tristique vitae."
     },
     {
@@ -20,7 +20,7 @@
         "author": "Suzanne Collins",
         "genre": "Science Fiction",
         "stock": 4,
-        "img": "images/books/book3.jpeg",
+        "img": "/images/books/book3.jpeg",
         "desc" :"Morbi ut augue elementum, sollicitudin ex et, accumsan elit. Nunc eu erat ac diam placerat sodales et et quam. Cras porta eros euismod lobortis egestas. Maecenas massa lacus, euismod in lorem eu, imperdiet elementum metus. Curabitur eu magna eu mi viverra suscipit. Proin vel porttitor ligula."
     },
     {
@@ -28,7 +28,7 @@
         "author": "Veronica Roth",
         "genre": "Science Fiction",
         "stock": 10,
-        "img": "images/books/book4.jpeg",
+        "img": "/images/books/book4.jpeg",
         "desc" :"Morbi ut augue elementum, sollicitudin ex et, accumsan elit. Nunc eu erat ac diam placerat sodales et et quam. Cras porta eros euismod lobortis egestas. Maecenas massa lacus, euismod in lorem eu, imperdiet elementum metus. Curabitur eu magna eu mi viverra suscipit. Proin vel porttitor ligula."
     },
     {
@@ -36,7 +36,7 @@
         "author": "John Green",
         "genre": "Romance",
         "stock": 5,
-        "img": "images/books/book5.jpeg",
+        "img": "/images/books/book5.jpeg",
         "desc" :"Ut euismod quam dolor, ac bibendum dui hendrerit eget. Aliquam id maximus metus. Maecenas vestibulum nunc id facilisis lobortis. Aenean luctus ex non neque finibus accumsan. Vivamus ante ipsum, blandit non pretium et, dignissim a urna. Vestibulum a aliquet nisi."
     },
     {
@@ -44,7 +44,7 @@
         "author": "Raditya Dika",
         "genre": "Comedy",
         "stock": 20,
-        "img": "images/books/book6.jpeg",
+        "img": "/images/books/book6.jpeg",
         "desc" :"Vestibulum dignissim ex eu odio mollis volutpat. Vestibulum enim massa, aliquet ut lobortis sodales, venenatis sit amet nibh. Ut viverra neque sapien, quis cursus lacus tristique vitae."
     },
     {
@@ -52,7 +52,7 @@
         "author": "Raditya Dika",
         "genre": "Comedy",
         "stock": 20,
-        "img": "images/books/book7.jpeg",
+        "img": "/images/books/book7.jpeg",
         "desc" :"Ut euismod quam dolor, ac bibendum dui hendrerit eget. Aliquam id maximus metus. Maecenas vestibulum nunc id facilisis lobortis. Aenean luctus ex non neque finibus accumsan. Vivamus ante ipsum, blandit non pretium et, dignissim a urna. Vestibulum a aliquet nisi."
     },
     {
@@ -60,7 +60,7 @@
         "author": "Andrea Hirata",
         "genre": "Drama",
         "stock": 25,
-        "img": "images/books/book8.jpeg",
+        "img": "/images/books/book8.jpeg",
         "desc" :"Vestibulum dignissim ex eu odio mollis volutpat. Vestibulum enim massa, aliquet ut lobortis sodales, venenatis sit amet nibh. Ut viverra neque sapien, quis cursus lacus tristique vitae."
     },
     {
@@ -68,7 +68,7 @@
         "author": "Alex Ferguson",
         "genre": "Autobiografi",
         "stock": 3,
-        "img": "images/books/book9.jpeg",
+        "img": "/images/books/book9.jpeg",
         "desc" :"Morbi ut augue elementum, sollicitudin ex et, accumsan elit. Nunc eu erat ac diam placerat sodales et et quam. Cras porta eros euismod lobortis egestas. Maecenas massa lacus, euismod in lorem eu, imperdiet elementum metus. Curabitur eu magna eu mi viverra suscipit. Proin vel porttitor ligula."
     },
     {

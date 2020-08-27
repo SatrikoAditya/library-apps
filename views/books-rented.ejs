@@ -20,7 +20,9 @@
                     <td><%= data[i].rent_date %></td>
                     <td><%= data[i].due_date %></td>
                     <td><%= data[i].status %></td>
-                    <td><%= data[i].status %></td>
+                    <td>
+                        <a href="/user/return/<%= data[i].id %>" class="btn btn-primary">Return</a>
+                    </td>
                   </tr>
             <% } %>
         </tbody>
