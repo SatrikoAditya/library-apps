@@ -1,6 +1,35 @@
-const { Book, User } = require('../models')
+const { Book, User, Admin } = require('../models')
+
+const bcrypt = require('bcryptjs');
 
 class AdminControllers {
+    static loginForm(req, res) {
+        res.render('admin/login')
+    }
+
+    static loginPost(req, res) {
+        const email = req.body.email
+        const password = req.body.password
+        Admin.findOne({
+            where : {
+                email
+            }
+        })
+        .then(admin => {
+            if(admin) {
+                if(bcrypt.compareSync(password, admin.password)) {
+                    req.session.adminId = admin.id 
+                    res.redirect('/admin/list-books')
+                    console.log(req.session)
+                } else {
+                    res.send('password salah')
+                }
+            } else {
+                res.send('user not found')
+            }
+        })
+    }
+
     static show(req, res) {
         Book.findAll({
             order : [
@@ -125,6 +154,11 @@ class AdminControllers {
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static logout(req, res) {
+        delete req.session.adminId
+        res.redirect('/admin/login')
     }
 }
 module.exports = AdminControllers
