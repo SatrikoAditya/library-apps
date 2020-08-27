@@ -3,6 +3,19 @@ const router = express.Router()
 
 const AdminControllers = require('../controllers/adminControllers')
 
+router.get('/login', AdminControllers.loginForm)
+router.post('/login', AdminControllers.loginPost)
+
+function checkLogin(req, res, next ) {
+    if(req.session.adminId){
+        next()
+    } else {
+        res.redirect('admin/login')
+    }
+}
+
+router.use(checkLogin)
+
 router.get('/')
 router.get('/list-books', AdminControllers.show)
 router.get('/book/add', AdminControllers.addForm)
@@ -14,5 +27,6 @@ router.get('/register/user', AdminControllers.registerForm)
 router.post('/register/user', AdminControllers.registerPost)
 router.get('/list-users', AdminControllers.listUser)
 router.get('/delete/user/:id', AdminControllers.deleteUser)
+router.get('/logout', AdminControllers.logout)
 
 module.exports = router
