@@ -16,7 +16,7 @@ class UserController {
                 res.send(err);
             })
         } else {
-            res.redirect('/user/login')
+            res.redirect('/')
         }
     }
     static loginForm(req, res) {
@@ -34,7 +34,6 @@ class UserController {
         .then(data => {
             if(bcrypt.compareSync(password, data.password)){
                 req.session.userId = data.id;
-                req.session.role = 'user';
                 res.redirect('/user/views');
             } else {
                 res.send('wrong password')
@@ -59,7 +58,7 @@ class UserController {
                     res.send(err);
                 })
         } else {
-            res.redirect('/user/login')
+            res.redirect('/')
         }
     }
     static checkoutPost(req, res) {
@@ -88,23 +87,39 @@ class UserController {
         // borrowed book list
         if(req.session.userId) {
             UserBook.findAll({ 
-                where : { user_id : req.session.userId },
+                where : { 
+                    user_id : req.session.userId,
+                    status : 'outgoing'
+                },
                 include : [Book, User]
              })
                 .then(data => {
+                    console.log(data)
                     res.render('books-rented', { data })
                 })
                 .catch(err => {
                     console.log(err)
                     res.send(err)
                 })
-            
         } else {
-            res.redirect('/user/login')
+            res.redirect('/')
         }
     }
     static return(req, res) {
         // returning book, change status to pending
+        if (req.session.userId){
+            const id = req.params.userbookId
+            UserBook.update({ status : 'returned'},{ where : { id : id }})
+                .then(data => {
+                    res.redirect('/user/rented')
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.send(err);
+                })
+        } else {
+            res.redirect('/')
+        }
     }
 }
 
