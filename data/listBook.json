@@ -1,0 +1,69 @@
+[
+    {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "author": "J.K. Rowling",
+        "genre": "Fantasy",
+        "stock": 15
+    },
+    {
+        "title": "The Lightning Thief (Percy Jackson and the Olympians)",
+        "author": "Rick Riordan ",
+        "genre": "Adventure",
+        "stock": 8
+    },
+    {
+        "title": "Twilight",
+        "author": "Stephenie Meyer",
+        "genre": "Fantasy",
+        "stock": 7
+    },
+    {
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "genre": "Science Fiction",
+        "stock": 4
+    },
+    {
+        "title": "Divergent",
+        "author": "Veronica Roth",
+        "genre": "Science Fiction",
+        "stock": 10
+    },
+    {
+        "title": "The Fault in Our Stars",
+        "author": "John Green",
+        "genre": "Romance",
+        "stock": 5
+    },
+    {
+        "title": "Manusia Setengah Salmon",
+        "author": "Raditya Dika",
+        "genre": "Comedy",
+        "stock": 20
+    },
+    {
+        "title": "Kambing Jantan",
+        "author": "Raditya Dika",
+        "genre": "Comedy",
+        "stock": 20
+    },
+    {
+        "title": "Laskar Pelangi",
+        "author": "Andrea Hirata",
+        "genre": "Drama",
+        "stock": 25
+    },
+    {
+        "title": "Alex Ferguson",
+        "author": "Alex Ferguson",
+        "genre": "Autobiografi",
+        "stock": 3
+    },
+    {
+        "title": "The Maze Runner",
+        "author": "James Dashner",
+        "genre": "Science Fiction",
+        "stock": 12
+    }
+
+]

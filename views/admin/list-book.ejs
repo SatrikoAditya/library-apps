@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>List Book</title>
+  </head>
+  <body>
+      <div class="container"><br>
+        <%- include('../partials/navbar') %>
+        <h1>List Book</h1>
+        <p style="text-align: right;"><a class="btn btn-success" href="book/add" role="button">Add New Book</a></p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Option</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= data[i].title %></td>
+                        <td><%= data[i].author %></td>
+                        <td><%= data[i].genre %></td>
+                        <td><%= data[i].stock %></td>
+                        <td>
+                            <a class="btn btn-primary" href="/admin/book/edit/<%= data[i].id %>" role="button">Edit</a> 
+                            <a class="btn btn-danger" <a onclick="return window.confirm('Are you sure want to delete this book?')" href="/admin/delete-book/<%= data[i].id %>" role="button">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>

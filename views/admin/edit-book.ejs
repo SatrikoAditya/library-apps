@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Edit Book</title>
+  </head>
+  <body>
+    <div class="container"><br>
+    <h1>Edit Book</h1><br>
+    <form action="<%= data.id %>" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="<%= data.title %>" placeholder="Book title">
+        </div>
+    
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Author</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="author" value="<%= data.author %>" placeholder="Author name">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">genre</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="genre" value="<%= data.genre %>" placeholder="Book genre">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Stock</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="stock" value="<%= data.stock %>" placeholder="Book stock">
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-danger" href="/admin/list-books" role="button">Cancel</a>
+    </form>
+    </div>
+  </body>
+</html>
