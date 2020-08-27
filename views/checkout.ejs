@@ -1,0 +1,32 @@
+<%- include('./partials/user-header') %>
+<%- include('./partials/user-navbar') %>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-1">
+            <div class="card mb-3" style="max-width: 100%; margin: auto 10px;">
+                <div class="row no-gutters">
+                    <div class="col-md-2" style="background-image: url(/<%= data.img %>); background-position: center; background-size: cover;">
+                    </div>
+                    <div class="col-md-10" style="min-height: 240px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= data.title %></h5>
+                        <p class="card-text" style="overflow: hidden; height: 95px;"><%= data.desc %></p>
+                        <p class="card-text" style="margin-bottom: 5px;"><small class="text-muted">Genre : <%= data.genre %></small></p>
+                        <p class="card-text"><small class="text-muted">Author : <%= data.author %></small></p>
+                        </div>
+                        <div class="card-footer">
+                            <form action="/user/checkout/<%= data.id %>" method="POST" class="form-inline">
+                                <div class="form-group">
+                                    <label>How long?</label>
+                                    <input type="number" class="form-control mx-sm-3" name="num" min="1" max="7">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<%- include('./partials/user-footer') %>

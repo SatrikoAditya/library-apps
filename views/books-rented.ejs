@@ -1,0 +1,29 @@
+<%- include('./partials/user-header') %>
+<%- include('./partials/user-navbar') %>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Rent Date</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < data.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= i + 1 %></th>
+                    <td><%= data[i].Book.title %></td>
+                    <td><%= data[i].rent_date %></td>
+                    <td><%= data[i].due_date %></td>
+                    <td><%= data[i].status %></td>
+                    <td><%= data[i].status %></td>
+                  </tr>
+            <% } %>
+        </tbody>
+      </table>
+</div>
+<%- include('./partials/user-footer') %>
