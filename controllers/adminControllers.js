@@ -83,7 +83,12 @@ class AdminControllers {
     static registerPost(req, res) {
         const { first_name, last_name, email, password, phone_number, address } = req.body
         User.create({
-            first_name, last_name, email, password, phone_number, address
+            first_name, 
+            last_name, 
+            email : email.toLowerCase(), 
+            password, 
+            phone_number, 
+            address
         })
         .then(result => {
             res.redirect('/admin/list-books')
