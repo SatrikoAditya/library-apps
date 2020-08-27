@@ -76,8 +76,15 @@
         "author": "James Dashner",
         "genre": "Science Fiction",
         "stock": 12,
-        "img": "images/books/book10.jpeg",
-        "desc" :"Ut euismod quam dolor, ac bibendum dui hendrerit eget. Aliquam id maximus metus. Maecenas vestibulum nunc id facilisis lobortis. Aenean luctus ex non neque finibus accumsan. Vivamus ante ipsum, blandit non pretium et, dignissim a urna. Vestibulum a aliquet nisi."
+        "desc": "Harry Potter and the Sorcerer's Stone adalah novel pertama dalam seri Harry Potter karangan J.K. Rowling yang akan terdiri dari tujuh buku dan menampilkan Harry Potter, seorang penyihir muda. Buku ini terdiri dari 17 bab yg menggambarkan bagaimana Harry mengetahui bahwa dia adalah seorang penyihir, membuat teman akrab dan beberapa musuh di Sekolah Ilmu Gaib dan Ilmu Sihir Hogwarts, dan dengan pertolongan teman-temannya menghalangi kembalinya penyihir jahat Voldemort, yang membunuh orang tua Harry dan mencoba untuk membunuh Harry ketika dia masih berumur satu tahun.",
+        "img" : "https://images-na.ssl-images-amazon.com/images/I/51HSkTKlauL._SX346_BO1,204,203,200_.jpg"
+    },
+    {
+        "title": "The Lightning Thief (Percy Jackson and the Olympians)",
+        "author": "Rick Riordan ",
+        "genre": "Adventure",
+        "stock": 8,
+        "desc": "The Lightning Thief adalah buku pertama seri novel Percy Jackson & Dewa-Dewi Olympia karangan Rick Riordan. Novel ini menceritakan tentang petualangan seorang pemuda bernama Percy Jackson, yang merupakan anak dewa Poseidon dan dituduh mencuri petir Zeus. Judul aslinya dalam bahasa Inggris adalah The Lightning Thief. Buku ini pertama kali diterbitkan pada 1 Juli 2005 di Amerika Serikat oleh Hyperion Books. Selain itu, buku ini sudah diadaptasi menjadi film berjudul Percy Jackson & the Olympians: The Lightning Thief. Novel ini di Indonesia diterbitkan oleh penerbit Hikmah (Mizan Fantasy).",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/51BE8yvYwtL._SX324_BO1,204,203,200_.jpg"
     }
-
 ]
