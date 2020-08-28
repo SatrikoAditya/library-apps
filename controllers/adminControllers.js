@@ -2,7 +2,6 @@ const { Book, User, Admin, UserBook } = require('../models')
 
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
-
 class AdminControllers {
     static loginForm(req, res) {
         res.render('admin/login')
@@ -190,7 +189,43 @@ class AdminControllers {
             include: [User, Book]
         })
         .then(data => {
-            
+            res.render('admin/pending', { data })
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static addToLibrary(req, res) {
+        const id = req.params.id
+        let bookId
+        let stock
+        UserBook.findByPk(id)
+        .then(data => {
+            bookId = data.book_id
+            return Book.findByPk(bookId)
+        })
+        .then(data => {
+            stock = data.stock+1
+            return UserBook.update({
+                status: "available"
+            }, {
+                where : {
+                    id
+                }
+            })
+        })
+        .then(data => {
+            return Book.update({
+                stock
+            }, {
+                where : {
+                    id: bookId
+                }
+            })
+        })
+        .then(result => {
+            res.redirect('/admin/books/pending')
         })
         .catch(err => {
             res.send(err)
