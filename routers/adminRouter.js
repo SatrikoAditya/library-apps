@@ -16,7 +16,6 @@ function checkLogin(req, res, next ) {
 
 router.use(checkLogin)
 
-// router.get('/')
 router.get('/list-books',  AdminControllers.show)
 router.get('/book/add', AdminControllers.addForm)
 router.post('/book/add', AdminControllers.addPost)
@@ -28,7 +27,8 @@ router.post('/register/user', AdminControllers.registerPost)
 router.get('/list-users', AdminControllers.listUser)
 router.get('/delete/user/:id', AdminControllers.deleteUser)
 router.get('/books/rented', AdminControllers.listRentBook)
-router.get('/books/pending')
+router.get('/books/pending', AdminControllers.pending)
+router.get('/sendToLibrary/:id', AdminControllers.addToLibrary)
 router.get('/sendemail', AdminControllers.emailForm)
 router.post('/sendemail', AdminControllers.emailPost)
 router.get('/logout', AdminControllers.logout)
