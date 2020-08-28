@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "pair-project-library-apps",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

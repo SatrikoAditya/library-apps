@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Add New Book</title>
+  </head>
+  <body>
+    <div class="container"><br>
+    <h1>Add New Book</h1><br>
+    <form action="/admin/sendemail" method="POST">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">To :</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="to" placeholder="Received">
+        </div>
+    
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Subject :</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="subject" placeholder="Author name">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Text</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" name="text" rows="3"></textarea>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a class="btn btn-danger" href="/admin/books/rented" role="button">Cancel</a>
+    </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<%- include('./partials/user-header') %>
+<%- include('./partials/user-navbar') %>
+<div class="container">
+    <% if(err){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= err %>
+        </div>
+    <% } %>
+    <div class="row row-cols-1 row-cols-md-2">
+        <% for (let i = 0; i < data.length; i++) { %>
+            <div class="card mb-3" margin: auto 10px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4" style="background-image: url(<%= data[i].img %>); background-position: center; background-size: cover;">
+                    </div>
+                    <div class="col-md-8" style="min-height: 240px;">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= data[i].title %></h5>
+                        <p class="card-text" style="overflow: hidden; height: 75px;"><%= data[i].desc %></p>
+                        <p class="card-text">
+                            <small class="text-muted">Genre : <%= data[i].genre %></small><br>
+                            <small class="text-muted">Author : <%= data[i].author %></small><br>
+                            <small class="text-muted">we have <%= data[i].stock %> copies of this book!</small>
+                        </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/user/checkout/<%= data[i].id %>" class="btn btn-outline-primary btn-sm">Rent</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+</div>
+<%- include('./partials/user-footer') %>

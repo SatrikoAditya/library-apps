@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>List Book</title>
+  </head>
+  <body>
+      <div class="container"><br>
+        <%- include('../partials/navbar') %>
+        <h1>List Book</h1>
+        <p style="text-align: right;"><a class="btn btn-primary" href="/admin/sendemail" role="button">Send Email</a></p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Title Book</th>
+                <th scope="col">Due Date</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= data[i].User.getFullName() %></td>
+                        <td><%= data[i].User.email %></td>
+                        <td><%= data[i].Book.title %></td>
+                        <td><%= moment(data[i].due_date).format("DD MMMM YYYY")  %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>
