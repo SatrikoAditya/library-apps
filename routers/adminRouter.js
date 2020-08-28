@@ -10,13 +10,13 @@ function checkLogin(req, res, next ) {
     if(req.session.adminId){
         next()
     } else {
-        res.redirect('admin/login')
+        res.redirect('/admin/login')
     }
 }
 
 router.use(checkLogin)
 
-router.get('/')
+// router.get('/')
 router.get('/list-books',  AdminControllers.show)
 router.get('/book/add', AdminControllers.addForm)
 router.post('/book/add', AdminControllers.addPost)
@@ -29,6 +29,8 @@ router.get('/list-users', AdminControllers.listUser)
 router.get('/delete/user/:id', AdminControllers.deleteUser)
 router.get('/books/rented', AdminControllers.listRentBook)
 router.get('/books/pending')
+router.get('/sendemail', AdminControllers.emailForm)
+router.post('/sendemail', AdminControllers.emailPost)
 router.get('/logout', AdminControllers.logout)
 
 module.exports = router
